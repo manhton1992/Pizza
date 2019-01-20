@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Pizza Service</title>
+    <link rel="import" href="Share_Nav_Footer.html">
+</head>
+<body>
+    <div class="container-fluid margin-top-index margin-botton">
+        <div style="background-color: black">
+            <div style="background-color: white">
+                <div class="text-center">
+                    <h1> <strong> MENU </strong></h1>
+                    <hr>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                        <div class="col-md-4 text-center" id="salami" data-price="9" onclick="addBestellung(1)">
+                            <img src="../images/pizza3.png" alt="Pizza" class="img-for-all-device">
+                            <p> Pizza Salami - 9.00 &euro; </p>
+                        </div>
+                        <div class="col-md-4 text-center" id="pilze" data-price="10" onclick="addBestellung(2)">
+                            <img src="../images/pizza4.png" alt="Pizza" class="img-for-all-device">
+                            <p> Pizza Pilze - 10.00 &euro; </p>
+                        </div>
+                        <div class="col-md-4 text-center" id="schinken" data-price="11" onclick="addBestellung(3)">
+                            <img src="../images/pizza5.png" alt="Pizza" class="img-for-all-device">
+                            <p> Pizza Schinken -11.00 &euro; </p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <hr>
+                </div>
+            </div>
+
+            <div style="margin-top: 20px; background-color: white">
+                <div class="text-center">
+                    <h1> <strong> WARENKORB </strong></h1>
+                    <hr>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <div class="form-group" style="margin-top: 30px">
+                                        <input type="text" id="kunden-address" class="form-control" placeholder="Kunden Address">
+                                    </div>
+                                    <div class="form-group" style="margin-top: 20px">
+                                <textarea class="form-control" id="text-kunden-bestelung" rows="3" readonly>
+
+                                </textarea>
+                                    </div>
+                                    <div class="form-group" style="margin-top: 20px">
+                                <textarea class="form-control" id="gesamtprice" rows="1">
+
+                                </textarea>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-6" style="position: relative">
+                        <div style="position: absolute">
+                            <div class="">
+                                <button class="btn btn-lg btn-info" id="bestellung"> Bestellung</button>
+                            </div>
+                            <div style="margin-top: 15px">
+                                <button class="btn btn-lg btn-warning" id="loeschen">  Löschen  </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    var link = document.querySelector('link[rel="import"]');
+    var content = link.import;
+    // Grab DOM from warning.html's document.
+    var el = content.querySelector('#nav-share-file');
+    document.body.appendChild(el.cloneNode(true));
+
+    var PizzaBestellung = new Array(0, 0, 0);
+
+    var salamiPrice = document.getElementById("salami").getAttribute('data-price');
+    var pilzePrice = document.getElementById("pilze").getAttribute('data-price');
+    var schinkenPrice = document.getElementById("schinken").getAttribute('data-price');
+
+    function summPrice() {
+        var summ = 0;
+        summ += arguments[0]*salamiPrice;
+        summ += arguments[1]*pilzePrice;
+        summ += arguments[2]*schinkenPrice;
+        return summ;
+    }
+
+    function addBestellung(numb) {
+        if (numb === 1) {
+            PizzaBestellung[0] += 1;
+        }
+        if (numb === 2) {
+            PizzaBestellung[1] += 1;
+        }
+        if (numb === 3) {
+            PizzaBestellung[2] += 1;
+        }
+        print();
+    }
+    function loschen() {
+        PizzaBestellung[0] = 0;
+        PizzaBestellung[1] = 0;
+        PizzaBestellung[2] = 0;
+    }
+
+</script>
+
+<script>
+    var  euro = " &euro; ";
+    function print() {
+        var Price = summPrice(PizzaBestellung[0], PizzaBestellung[1], PizzaBestellung[2]);
+        document.getElementById("text-kunden-bestelung").innerText = PizzaBestellung;
+        document.getElementById("gesamtprice").innerHTML = Price + euro;
+    }
+    document.getElementById("loeschen").onclick = function () {
+        loschen();
+        print();
+    }
+</script>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bäcker</title>
+    <link rel="import" href="Share_Nav_Footer.html">
+</head>
+<body>
+<div class="container margin-top-index">
+    <div style="background-color: black">
+        <div style="background-color: white">
+            <div class="text-center">
+                <h1> <strong> Bäcker </strong></h1>
+                <h3 style="font-family: 'Gill Sans Ultra Bold'"> BESTELLISTE </h3>
+                <hr>
+            </div>
+            <hr>
+            <form>
+                <div class="row">
+                    <div class="backer text-center">
+                        <span> Kunden Bestellung</span>
+                    </div>
+                    <hr>
+                    <div class="">
+                        <span> <strong> OrderId : 1 </strong> </span> <br>
+                        <span> PizzaName : 2</span> <br>
+                    </div>
+                    <div class="">
+                        <span> <strong> Status: </strong> </span>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-sm-offset-3">
+                        <div class="form-group col-sm-2 text-center" name="bearbeitung">
+                            <label> <input type="radio"> In Bearbeitung </label>
+                        </div>
+                        <div class="form-group col-sm-2 text-center" name="inofen">
+                            <label> <input type="radio"> Im Ofen </label>
+                        </div>
+                        <div class="form-group col-sm-2 text-center" name="fertig">
+                            <label> <input type="radio"> Fertig </label>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="text-center">
+                    <button class="btn btn-info btn-lg"> Aktualisieren </button>
+                </div>
+            </form>
+            <div class="text-center">
+                <p> Es gibt zur Zeit keine Bestellungen.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+<script>
+    var link = document.querySelector('link[rel="import"]');
+    var content = link.import;
+    // Grab DOM from warning.html's document.
+    var el = content.querySelector('#nav-share-file');
+    document.body.appendChild(el.cloneNode(true));
+</script>

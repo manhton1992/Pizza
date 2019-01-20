@@ -1,0 +1,43 @@
+
+.nav-color{
+    background-color: #0f0f0f;
+}
+.footer-size-background{
+    margin-bottom: 10px;
+    height: 40px;
+    text-align: center;
+    background-color: #0f0f0f;
+}
+div.margin-top-index{
+    margin-top: 40px;
+}
+
+.margin-botton{
+    margin-bottom: 40px;
+}
+body{
+    background-color: #0f0f0f;
+}
+.vertical-center-row{
+     margin-top: 50%;
+    margin-bottom: 50%;
+}
+img:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+
+@media screen and (max-device-width: 767px){
+    .img-for-all-device{
+        width: 55%;
+        height: auto;
+    }
+}
+
+@media screen and (min-device-width: 768px) and (max-device-width: 991px){
+    .img-for-all-device{
+        width: 65%;
+        height: auto;
+    }
+}

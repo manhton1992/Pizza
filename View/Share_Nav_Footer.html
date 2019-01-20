@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Navigation</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/Style.css">
+    <link rel="stylesheet" href="../css/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../css/css/bootstrap-theme.min.css">
+</head>
+<body  id="nav-share-file">
+	<nav class="navbar navbar-inverse navbar-fixed-top nav" style="position: absolute">
+        <div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" id="myNavbarcode" onclick="myFunction()">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+				</button>
+                <a class="navbar-brand" href="Pizza_Service.html"> HOME</a>
+			</div>
+            <div class="collapse navbar-collapse" id="Hambergerbutton">
+                <ul class="nav navbar-nav">
+                    <li> <a href="Kunden.html">KUNDE</a></li>
+                    <li> <a href="Backer.html">BÄKER</a></li>
+                    <li> <a href="Fahrer.html">FAHRER</a></li>
+                </ul>
+            </div>
+		</div>
+	</nav>
+</body>
+</html>
+
+<script>
+    function myFunction() {
+        var  x = document.getElementById("Hambergerbutton");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script>
